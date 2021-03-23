@@ -15,4 +15,8 @@
     <result column="registerTime" jdbcType="TIMESTAMP" property="registertime" />
     <result column="isAdmin" jdbcType="INTEGER" property="isadmin" />
   </resultMap>
+
+  <select id="getUserByAccount" resultType="com.company.project.model.User">
+    select * from user where account = #{account}
+  </select>
 </mapper>

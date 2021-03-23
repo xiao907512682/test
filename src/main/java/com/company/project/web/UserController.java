@@ -55,4 +55,23 @@ public class UserController {
         PageInfo pageInfo = new PageInfo(list);
         return ResultGenerator.genSuccessResult(pageInfo);
     }
+
+
+    /**
+     *
+     * @param user  account password
+     * @return
+     */
+    @RequestMapping("/login")
+    public Result UserLogin(User user){
+        if (user == null || user.getAccount() == null || user.getPassword() == null) {
+            return ResultGenerator.genFailResult("参数遗漏");
+        }
+        User userLogin = userService.userLogin(user);
+        if (userLogin != null) {
+            return ResultGenerator.genSuccessResult(userLogin);
+        }else {
+            return ResultGenerator.genFailResult("账号密码错误");
+        }
+    }
 }

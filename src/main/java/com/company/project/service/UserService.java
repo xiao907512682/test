@@ -8,4 +8,5 @@ import com.company.project.core.Service;
  */
 public interface UserService extends Service<User> {
 
+    User userLogin(User user);
 }

@@ -19,4 +19,10 @@
   <select id="getUserByAccount" resultType="com.company.project.model.User">
     select * from user where account = #{account}
   </select>
+
+    <select id="userLogin" resultType="com.company.project.model.User">
+      SELECT * FROM `user`
+      where account = #{account}
+      and `password` = #{password}
+    </select>
 </mapper>

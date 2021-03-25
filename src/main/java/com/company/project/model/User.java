@@ -57,6 +57,12 @@ public class User {
     private Integer isadmin;
 
     /**
+     * jwt生成的token
+     */
+    @Transient
+    private String token;
+
+    /**
      * 获取用户id
      *
      * @return id - 用户id
@@ -216,5 +222,13 @@ public class User {
      */
     public void setIsadmin(Integer isadmin) {
         this.isadmin = isadmin;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

@@ -194,18 +194,4 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 
         return ip;
     }
-
-    /**
-     * addResourceHandlers：静态资源
-     * @param registry
-     */
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**")
-                .addResourceLocations("classpath:/resources/page")
-                .addResourceLocations("classpath:/resources/page/css")
-                .addResourceLocations("classpath:/resources/page/js")
-                .addResourceLocations("classpath:/resources/page/img");
-        super.addResourceHandlers(registry);
-    }
 }
